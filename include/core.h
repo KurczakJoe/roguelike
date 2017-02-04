@@ -22,4 +22,10 @@ void render();
 
 void cleanup();
 
+void handleKeyEvent();
+void handleDownKeyPressed();
+void handleUpKeyPressed();
+void handleLeftKeyPressed();
+void handleRightKeyPressed();
+
 #endif

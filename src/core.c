@@ -3,6 +3,7 @@
 #include "core.h"
 #include "gfx.h"
 
+
 //test
 
 Sprite* heroSprite;
@@ -56,6 +57,11 @@ void handleEvents()
 					break;
 			}
 		}
+
+		else if(event.type == SDL_KEYDOWN)
+		{
+			handleKeyEvent(event.key.keysym.sym);
+		}
 	}
 }
 
@@ -65,4 +71,43 @@ void render()
 	renderSprite(heroSprite);
 	// end: test
 	SDL_UpdateWindowSurface(mainGameWindow);
+}
+
+void handleKeyEvent(SDL_Keycode key)
+{
+	switch(key)
+	{
+		case SDLK_DOWN:
+			handleDownKeyPressed();
+			break;
+		case SDLK_UP:
+			handleUpKeyPressed();
+			break;
+		case SDLK_LEFT:
+			handleLeftKeyPressed();
+			break;
+		case SDLK_RIGHT:
+			handleRightKeyPressed();
+			break;
+	}
+}
+
+void handleDownKeyPressed()
+{
+	heroSprite->y += 16;
+}
+
+void handleUpKeyPressed()
+{
+	heroSprite->y -= 16;
+}
+
+void handleRightKeyPressed()
+{
+	heroSprite->x += 16;
+}
+
+void handleLeftKeyPressed()
+{
+	heroSprite->x -= 16;
 }
