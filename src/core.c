@@ -3,6 +3,11 @@
 #include "core.h"
 #include "gfx.h"
 
+//test
+
+Sprite* heroSprite;
+// end: test
+
 void initResources()
 {
 	mainGameWindow = NULL; 
@@ -18,12 +23,13 @@ void initResources()
 										gamePreferences.windowFlags);
 
 	initBackgroundColor();
-
+	heroSprite = initSprite("assets/images/sprites/hero.png");
 	gamePreferences.running = true;
 }
 
 void cleanup()
 {
+	destroySprite(heroSprite);
 	SDL_DestroyWindow(mainGameWindow);
 	IMG_Quit();
 	SDL_Quit();
@@ -55,5 +61,8 @@ void handleEvents()
 
 void render()
 {
+	// test
+	renderSprite(heroSprite);
+	// end: test
 	SDL_UpdateWindowSurface(mainGameWindow);
 }
