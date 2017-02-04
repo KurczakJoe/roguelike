@@ -1,9 +1,13 @@
 #include <SDL2/SDL.h>
+#include "core.h"
 
 int main()
 {
-	SDL_Init(SDL_INIT_EVERYTHING);
+	initResources();
+	render();
+	SDL_Delay(3000);
+	cleanup();	
 
-	SDL_Quit();
+	
 	return 0;
 }
