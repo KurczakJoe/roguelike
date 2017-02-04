@@ -4,10 +4,14 @@
 int main()
 {
 	initResources();
-	render();
-	SDL_Delay(3000);
-	cleanup();	
+	
+	while(gamePreferences.running)
+	{
+		handleEvents();
+		render();	
+	}
 
+	cleanup();	
 	
 	return 0;
 }
