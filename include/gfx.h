@@ -10,7 +10,7 @@ typedef struct Sprite
 	SDL_Surface* surface;
 } Sprite;
 
-void    initBackgroundColor();
+void    setBackgroundColor();
 Sprite* initSprite(char* path);
 void    renderSprite(Sprite* s);
 void    destroySprite(Sprite* s);

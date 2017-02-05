@@ -3,7 +3,7 @@
 #include "gfx.h"
 #include "core.h"
 
-void initBackgroundColor()
+void setBackgroundColor()
 {
 	SDL_Surface* windowBackgroundSurface = SDL_GetWindowSurface(mainGameWindow);
 	Uint32 backgroundColor = SDL_MapRGB(windowBackgroundSurface->format, 0,0,0);

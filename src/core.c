@@ -23,7 +23,7 @@ void initResources()
 										gamePreferences.windowHeight,
 										gamePreferences.windowFlags);
 
-	initBackgroundColor();
+	
 	heroSprite = initSprite("assets/images/sprites/hero.png");
 	gamePreferences.running = true;
 }
@@ -67,6 +67,7 @@ void handleEvents()
 
 void render()
 {
+	setBackgroundColor();
 	// test
 	renderSprite(heroSprite);
 	// end: test
